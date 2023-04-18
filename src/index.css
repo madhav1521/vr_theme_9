@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, 
+label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, 
+hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* General 
+--------------------------------------------------------------------------------------------------------*/
+* { outline: none; box-sizing: border-box;}
+/* .window-resizing *, body:not(.page-loaded) *{transition: none!important; } */
+html, body { min-width: 320px; min-height: 100vh; }
+body {margin: 0; font-size: 16px; line-height: 22px; font-family:-apple-system, BlinkMacSystemFont,'Open Sans', sans-serif; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+
+a {transition: all 0.3s; color: #9C9C9C; text-decoration: none; }
+a:hover,a:focus, a:active { color: #4b4b4b; text-decoration: none; }
+/* h1, h2, h3, h4, h5, h6 { line-height: 1.2em;  } */
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { display: block; }
+h1 {font-size: 40px;}
+h2 {font-size: 35px; } 
+h3 {font-size: 25px; }
+h4 {font-size: 20px; }
+h5 {font-size: 18px; }
+h6 {font-size: 16px; }
+
+input[type=text], input[type=email], input[type=password], textarea { -webkit-appearance: none; appearance: none; }
+::-webkit-input-placeholder { color: #ffffff; font-size: 18px; font-weight: 400;line-height: 21px;}
+::-moz-placeholder { color: #ffffff; }
+:-ms-input-placeholder { color: #ffffff; }
+:-moz-placeholder { color: #ffffff; }
+::-moz-focus-inner { border: 0; }
+select:-moz-focusring { color: transparent; text-shadow: 0 0 0 #9C9C9C; }
+option:not(:checked) { color: black; }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+::-ms-reveal {
+  display: none;
+} 
+
+:root{
+    --primary:#5AC4FF;
+    --primarymain:#153D78;
+    --primaryHover:#35598E;
+    --secondary:#505050;
+    --secondaryMain:#4B4B4B;
+    --secondaryLight:#9C9C9C;
+    --black:#000000;
+    --white:#FFFFFF;
+    --danger:#FF5555;
+    --blue:#F4FBFF;
+}
+/* background: url(./assets/images/background-img.jpg) no-repeat; background-position: center; background-size: cover; 
+backdrop-filter: blur(7px);background-color: rgba(255, 255, 255, 0.6);*/
+
+/* login-page starts
+------------------------------------------------------------------------------------------------------------------------------------------------- */
+.img-fluid{max-width: 100%; height: auto;}
+.login-page{min-height:100vh;display: flex; justify-content: flex-end;align-items: center; }
+/* .login-page img{min-height: 100%;} */
+.login-container{width: 408px; margin: auto ;flex-shrink: 0;padding: 0 30px;}
+.login-form .btn-line{display: flex;align-items: center;justify-content: space-between;}
+
+
+/* login-page starts
+------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* login-page starts
+------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* login-page starts
+------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* login-page starts
+------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+@media (max-width:1399px){}
+@media (max-width:1199px){}
+@media (max-width:899px){
+  .login-page .hero-image, .login-page > img{display: none;}
+  .login-container{flex-shrink: 1;backdrop-filter: blur(7px); }
+  .login-page{background:url(./assets/images/bg-triangle.png) no-repeat;background-position: center; background-size: contain;}
+}
+@media (max-width:599px){}
