@@ -5,6 +5,8 @@ import { ThemeProvider } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import { appTheme } from './app.theme';
+import Dashboard from './pages/Dashboard';
+import Orders from './pages/Orders';
 
 function App() {
   return (
@@ -13,8 +15,8 @@ function App() {
       <BrowserRouter>
         <Routes >
           <Route path="/" element={<Login></Login>} />
-          {/* <Route path="/dashboard" element={<Dashboard></Dashboard>} />
-            <Route path="/statistics" element={<Statistics></Statistics>} /> */}
+          <Route path="/dashboard" element={<Dashboard></Dashboard>} />
+            <Route path="/orders" element={<Orders></Orders>} />
         </Routes>
       </BrowserRouter>
       </ThemeProvider>

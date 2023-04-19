@@ -3,6 +3,16 @@ import { Box, Button, Container, FormControl, Grid, IconButton, Input, InputAdor
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { bgtriangle, brandlogo, mockup } from '../assets/images';
+// import {Svgcolors} from '../components/Svgcolors';
+
+
+// export default function App() {
+//   return (
+//     <div>
+//       <Svgcolors fill="black" stroke="yellow" />
+//     </div>
+//   );
+// }
 
 export default function Login() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -22,6 +32,7 @@ export default function Login() {
             password: data.get("password"),
         });
     };
+
     return (
         <>
             <Box className='login-page'>
@@ -30,11 +41,14 @@ export default function Login() {
                 </Box>
         {/* <Container maxWidth='xl'> */}
                 <Box className="login-container">
-                    <Link href="/" title="brand-logo"> <img src={brandlogo} alt="logo" className='img-fluid' /></Link>
-                    <Typography variant="h1" className="login-heading" marginBottom="6px" marginTop='43px'>
+                    <Link href="/" title="brand-logo"> 
+                    <img src={brandlogo} alt="logo" className='img-fluid' />
+                    {/* <Svgcolors fill='primary' /> */}
+                    </Link>
+                    <Typography variant="h1" className="login-heading" marginBottom="6px" marginTop={{xs:'25px', md:'43px' }}>
                         Welcome Back!
                     </Typography>
-                    <Typography variant="h5" className="login-subheading" marginBottom="30px">
+                    <Typography variant="h5" className="login-subheading" marginBottom={{xs:'25px', md:'40px' }}>
                         Log in to your account
                     </Typography>
                     <Box className="login-form">
@@ -63,12 +77,12 @@ export default function Login() {
                                                     onMouseDown={handleMouseDownPassword}
                                                 // edge="end"
                                                 >
-                                                    {showPassword ? <VisibilityOff color="warning" /> : <Visibility color="warning" />}
+                                                    {showPassword ? <Visibility /> :<VisibilityOff /> }
                                                 </IconButton>
                                             </InputAdornment>
                                         }
                                     />
-                                    <Box className="btn-line" marginTop='30px' marginBottom='26px'>
+                                    <Box className="btn-line" marginTop={{xs:'25px', md:'30px' }} marginBottom='26px'>
                                         <Button type="submit" disableElevation variant="contained" className="login-btn" onClick={() => { navigate("/dashboard"); }}>
                                             <Typography variant="body1" component="span" className="login" >
                                                 Login
