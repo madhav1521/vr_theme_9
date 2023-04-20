@@ -34,6 +34,7 @@ export const cost = require ("./cost-ic.svg").default
 export const menuicon = require ("./ic-hor-dots.svg").default
 export const datagraph = require ("./data-graph.png")
 export const deals = require ("./weekly-deals.png")
+export const tablemenu = require ("./table-menu-ic.svg").default
 // orders page----------
 export const dropdownselect = require ("./ic-select-arrow.svg").default
 export const textarea = require ("./ic-textarea.svg").default

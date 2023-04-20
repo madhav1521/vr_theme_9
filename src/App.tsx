@@ -14,9 +14,9 @@ function App() {
       <ThemeProvider theme = {appTheme}>
       <BrowserRouter>
         <Routes >
+          <Route path="/orders" element={<Orders></Orders>} />
           <Route path="/" element={<Login></Login>} />
           <Route path="/dashboard" element={<Dashboard></Dashboard>} />
-            <Route path="/orders" element={<Orders></Orders>} />
         </Routes>
       </BrowserRouter>
       </ThemeProvider>

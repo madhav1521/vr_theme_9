@@ -2,19 +2,16 @@ import { createTheme } from "@mui/material";
 // const currentDirection = "ltr";
 const primary = "#00A2A1";
 const primaryMain = "#009291";
-const primaryContrast = "#F6F6F6";
+const primaryContrast = '#F6f6F6';
 const secondary = "#505050";
 const secondaryMain = "#848484";
 const secondaryLight = "#9C9C9C";
 const secondaryContrast = "#A3A3A3";
 const grey = "#B0B0B0";
-const greyLight = "#CECECE";
-const greyDark = "#DBDBDB";
+const greyLight = "#E2E2E2";
+const greyDark = "#BDBDBD";
 const white = "#FFFFFF";
 const black = "#000000";
-const blue = "#F4FBFF";
-const danger = "#FF5555";
-const primaryHover = "#35598E";
 const warning = "#cecece";
 
 export const appTheme = createTheme({
@@ -31,7 +28,7 @@ export const appTheme = createTheme({
       dark: "#404040",
     },
     info: {
-      main: grey,
+      main: white,
       light: "#ebebeb",
       dark: "#bababa",
     },
@@ -62,8 +59,8 @@ export const appTheme = createTheme({
       lineHeight: "35px",
       color: black,
       fontWeight: "700",
-      "@media (max-width:899px)": {
-        fontSize: "26px",
+      "@media (max-width:1399px)": {
+        fontSize: "27px",
         fontWeight: "600",
       },
     },
@@ -110,6 +107,8 @@ components:{
                 },
                 "&.card-subhead":{
                   color:black,
+                  fontSize:"18px",
+                    lineHeight:"21px",
                 },
                 "&.weekly-total":{
                   color:black,
@@ -134,13 +133,57 @@ components:{
                   flexGrow:0,
                   marginLeft:"8px",
                 },
+                "&.page-head":{
+                  marginBottom: '26px',
+                  fontWeight: 500,
+                },
+                "&.page-subhead":{
+                  fontSize:"18px",
+                  fontWeight:"400",
+                  lineHeight:"21px",
+                  color:secondary,
+                  marginBottom:"16px",
+                  
+                },
+                "&.tab-text":{
+                  fontSize:"15px",
+                  fontWeight:"400",
+                  lineHeight:"24px",
+                  color:secondary,
+                },
+                "&.nis":{
+                  fontSize:"15px",
+                  lineHeight:"17px",
+                  color:grey,
+                },
             },
         },
+    },
+    MuiFormControlLabel:{
+      styleOverrides:{
+        root:{
+          marginRight:"45px",
+          ".MuiFormControlLabel-label":{
+            color:grey,
+            fontSize:"15px",
+            lineHeight:"18px",
+          },
+        },
+      },
     },
     MuiFormControl:{
         styleOverrides:{
             root:{
                 width:"100%",
+                ".MuiFormHelperText-root":{
+                  fontSize:"12px",
+                  lineHeight:"14px",
+                  marginTop:"7px",
+                  color:grey,
+                  "&.Mui-error":{
+                    color:"#FF3939",
+                  },
+                },
             },
         },
     },
@@ -150,21 +193,28 @@ components:{
                 fontSize:"15px",
                 fontWeight:"400",
                 lineHeight:"17px",
-                // transform: "translate(0, -1.5px) scale(0.825)",
-                ".login-form &.MuiInputLabel-root":{
+                color:grey,
+                "&.Mui-focused":{
                     color:grey,
+                },
+                "&.Mui-error": {
+                  color: "#FF3939",
                 },
             },
         },
     },
+
     MuiInput:{
         styleOverrides:{
             root:{
                 "&:before":{
                     borderBottom:"1px solid" + greyDark,
-                },
+                  },
+                  "&.Mui-error:before":{
+                    borderBottom:"1px solid #ff3939",
+                  },
                 "&:hover:not(.Mui-disabled, .Mui-error):before":{
-                  borderBottom:"1px solid rgba(0,0,0,0.4)" ,
+                  borderBottom:"1px solid rgba(0,0,0,0.5)" ,
                 }
             },
             input:{
@@ -189,6 +239,22 @@ components:{
         },
       },
     },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          padding: "7px",
+          // lineHeight:"normal"
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: {
+          padding: "7px",
+          lineHeight:"normal"
+        },
+      },
+    },
     MuiButton:{
         styleOverrides:{
             root:{
@@ -205,30 +271,34 @@ components:{
                 },
                 "&.search-btn": {
                   display: "none",
-                  "@media (max-width:599px)": {
-                    display: "block",
-                    // marginLeft: "auto",
-                    marginRight: "20px",
+                  "@media (max-width:899px)": {
+                    display: "flex",
+                    marginLeft: "auto",
+                    marginRight: "10px",
+                  },
+                  "& img":{
+                    width:"25px",
+                    height:"25px",
                   },
                 },
                 "&.notification-btn": {
                   marginLeft: "auto",
                   marginRight: "28px",
-                  "@media (max-width:599px)": {
-                    marginRight: "20px",
-                    // marginLeft: "0",
+                  "@media (max-width:899px)": {
+                    marginRight: "10px",
+                    marginLeft:'0'
                   },
                 },
                 "&.dropdown": {
                   border: "1px solid transparent",
                   padding: "10px",
                   background:'transparent',
+                  minWidth:'40px',
+                  height:'40px',
                   "&:hover, &:focus, &:active": {
                     border: "1px solid" + white,
                   },
                   "@media (max-width:899px)": {
-                    minWidth: "35px",
-                    height: "35px",
                     padding: "5px",
                   },
                 },
@@ -237,6 +307,9 @@ components:{
                   display:"flex",
                   alignItems:"center",
                   textAlign:"start",
+                  minWidth:"auto",
+                  height:"auto",
+                  textTransform:"capitalize",
                   "@media (max-width:599px)": {
                     padding: "5px",
                     "& .dropdown-arrow, & .profile-name":{
@@ -245,14 +318,42 @@ components:{
                   },
                 },
                 "&.card-dots":{
-                  padding:0,
+                  padding:'3px',
                   background:"transparent",
                   minWidth:"30px",
                   height:"fit-content",
                   border:"1px solid transparent",
-                  "&:hover, &:focus, &:active":{
+                  "&:hover, &:active":{
                     border:"1px solid" + secondaryMain,
-                  }
+                  },
+                  ".MuiTouchRipple-root":{
+                    color:grey,
+                    borderRadius:"50px",
+                  },
+                },
+                "&.primary-btn":{
+                  padding:"13px 30px",
+                  fontSize: "18px",
+                  fontWeight: "700",
+                  lineHeight: "21px",
+                  color:white,
+                },
+                "&.secondary-btn":{
+                  padding:"13px 24px",
+                  fontSize: "18px",
+                  fontWeight: "700",
+                  lineHeight: "21px",
+                  color:primary,
+                  border:"2px solid" + primary,
+                },
+                ".upload-content &.MuiButton-root": {
+                  padding: "9px 22px",
+                  border: "0",
+                  fontSize: "15px",
+                  lineHeight: "17px",
+                  backgroundColor: primaryContrast,
+                  textTransform: "lowercase",
+                  color: secondary,
                 },
             },
         },
@@ -290,12 +391,11 @@ components:{
           fontSize: "15px",
           fontWeight: "400",
           lineHeight: "21px",
-          // height: "50px",
           borderBottom: "1px solid #E4E4E4",
         },
         body: {
           color: secondary,
-          lineHeight:"18px",
+          lineHeight:"17px",
           "&:last-child": {
             padding: "0 7px",
           },
@@ -304,6 +404,7 @@ components:{
           color: secondaryContrast,
           fontWeight: "500",
           fontSize: "18px",
+          height: "52px",
           textTransform: "uppercase",
         },
       },
@@ -320,30 +421,8 @@ components:{
     MuiInputBase: {
       styleOverrides: {
         root: {
-          borderRadius: "5px",
-          height: "48px",
-          ".textarea &.MuiOutlinedInput-root": {
-            height: "173px",
-            padding: "0",
-          },
           ".MuiSelect-icon": {
             opacity: "0",
-          },
-          ".arb .MuiSelect-icon": {
-            left: "7px",
-          },
-          "&.Mui-disabled .MuiOutlinedInput-notchedOutline": {
-            border: "1px dashed" + greyDark,
-          },
-          "&.Mui-error .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #FF3939",
-          },
-          "&:hover:not(.Mui-focused, .Mui-error) .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: "rgba(0,0,0,0.3)",
-            },
-          "&.Mui-disabled:hover .MuiOutlinedInput-notchedOutline": {
-            border: "1px dashed" + greyDark,
           },
         },
         input: {
@@ -351,12 +430,6 @@ components:{
           color: secondary,
           fontSize: "15px",
           height: "22px",
-          ".arb .text-select &.MuiOutlinedInput-input": {
-            padding: "13px 14px 13px 32px",
-          },
-          ".arb .input-password &.MuiOutlinedInput-input": {
-            padding: "unset",
-          },
         },
       },
     },
@@ -402,6 +475,61 @@ components:{
           alignItems: "center",
           display: "flex",
           color: white,
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        flexContainer: {
+          flexWrap: "nowrap",
+          height: "51px",
+          "&.MuiTabs-indicator": {
+            height: "3px",
+            marginBottom: "-1px",
+            bottom: "3px",
+          },
+        },
+        root: {
+          minHeight: "15px",
+          "&.inner-tabs": {
+            marginBottom: "14px",
+            ".MuiTabs-flexContainer": {
+              borderBottom: "1px solid" + greyLight,
+            },
+          },
+          "&.dash-tabs": {
+            ".MuiTabs-flexContainer": {
+              borderBottom: "none",
+            },
+          },
+        },
+
+        indicator: {
+          height: "3px",
+          marginBottom: "-1px",
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          minHeight: "15px",
+          fontSize: "15px",
+          fontWeight: "400",
+          color: grey,
+          textTransform: "capitalize",
+          "&.tabs": {
+            padding: "16px 23px ",
+            minWidth: "max-content",
+            "&:hover , &:active , &:focus": {
+              color: grey,
+              background: 'rgba(50, 179, 179, 0.15)',
+            },
+          },
+          "&.tabs.Mui-selected": {
+            color: primary,
+            fontWeight: "500",
+          },
         },
       },
     },

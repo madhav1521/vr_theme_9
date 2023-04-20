@@ -2,7 +2,7 @@ import React from 'react'
 import Sidebar from '../components/Sidebar'
 import Header from '../components/Header'
 import { Box, Button, Grid, Menu, MenuItem, MenuProps, Typography, styled,Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton } from '@mui/material'
-import { cost, datagraph, deals, menuicon, profit, sale, tree, wallet } from '../assets/images'
+import { cost, datagraph, deals, menuicon, profit, sale, tablemenu, tree, wallet } from '../assets/images'
 import { useNavigate } from 'react-router-dom'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
@@ -80,7 +80,7 @@ export default function Dashboard() {
         <Box className='wrapper-content'>
           <Header />
           <Box className='main-page'>
-            <Typography variant='h3' marginBottom='30px'>Dashboard</Typography>
+            <Typography variant='h3' marginBottom={{xs:'15px', sm:'20px', md:'30px'}}>Dashboard</Typography>
             <Grid container spacing={{xs:2, sm:3, md:4}}>
               <Grid item xs={12} sm={6} lg={3}>
                 <Box className='sticker'>
@@ -259,7 +259,7 @@ export default function Dashboard() {
                             <TableCell component="th" align="left">Product Name</TableCell>
                             <TableCell component="th" align="left">Status</TableCell>
                             <TableCell component="th" align="left">amount</TableCell>
-                            <TableCell component="th" align="left">Action</TableCell>
+                            <TableCell component="th" align="center">Action</TableCell>
                           </TableRow>
                         </TableHead>
                         <TableBody >
@@ -274,8 +274,8 @@ export default function Dashboard() {
                               <TableCell align="left">
                               <span className={`${low(row.status)}`}>
                               {row.status}
-                            </span>
-                            </TableCell>
+                              </span>
+                              </TableCell>
                               <TableCell align="left">{row.amount}</TableCell>
                               <TableCell align="center">{
                                 <Box>
@@ -290,7 +290,7 @@ export default function Dashboard() {
                                     color='warning'
                                     title='menu-icon'
                                   >
-                                    <MoreHorizIcon />
+                                    <img src={tablemenu} alt="menu-btn" />
                                   </IconButton>
                                   <StyledMenu
                                     id="demo-customized-menu"

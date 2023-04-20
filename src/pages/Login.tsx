@@ -3,18 +3,9 @@ import { Box, Button, Container, FormControl, Grid, IconButton, Input, InputAdor
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { bgtriangle, brandlogo, mockup } from '../assets/images';
-// import {Svgcolors} from '../components/Svgcolors';
-
-
-// export default function App() {
-//   return (
-//     <div>
-//       <Svgcolors fill="black" stroke="yellow" />
-//     </div>
-//   );
-// }
 
 export default function Login() {
+    // for password -------------------------------
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleMouseDownPassword = (

@@ -31,8 +31,8 @@ export default function Header() {
   ) => {
     setAlignment(newAlignment);
   };
-  const [anchorEl, setAnchorEl1] = React.useState<null | HTMLElement>(null);
-  const open1 = Boolean(anchorEl);
+  const [anchorEl1, setAnchorEl1] = React.useState<null | HTMLElement>(null);
+  const open1 = Boolean(anchorEl1);
   const handleClick1 = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl1(event.currentTarget);
   };
@@ -84,7 +84,7 @@ export default function Header() {
         </NavLink>
         <Box className='search-box'>
           <input type='search' title='search' className="search-input" placeholder="Search" ></input>
-          <Button onClick={searchbar} title='close-search' className="btn-close-search dropdown"><CloseRoundedIcon color="primary" /></Button>
+          <Button onClick={searchbar} title='close-search' className="btn-close-search dropdown"><CloseRoundedIcon color="info" /></Button>
         </Box>
         {/*   notification 
         --------------------------------------------------------------------------------------------------------------------------- */}
@@ -109,7 +109,7 @@ export default function Header() {
           MenuListProps={{
             'aria-labelledby': 'demo-customized-button',
           }}
-          anchorEl={anchorEl}
+          anchorEl={anchorEl1}
           open={open1}
           onClose={handleClose1}
           className="menu-list"
