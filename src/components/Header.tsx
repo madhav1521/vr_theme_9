@@ -1,7 +1,7 @@
 import { Box, Menu, MenuItem, Button, MenuProps, styled, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-import { brandicon, dropdownwhite, notification, profile, searchicon, toggleicon } from '../assets/images';
+import { brandicon, d_dropdownwhite, d_notification, d_searchicon, d_toggleicon, dropdownwhite, notification, profile, searchicon, toggleicon } from '../assets/images';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 const StyledMenu = styled((props: MenuProps) => (
@@ -69,6 +69,15 @@ export default function Header() {
   };
   window.addEventListener('scroll' ,changeBackground);
 
+  // for-dark-theme -----------------------------------------------------
+
+    function darktheme() {
+      document.body.classList.add('dark-theme')
+  };
+  function lighttheme() {
+      document.body.classList.remove('dark-theme')
+  };
+
   return (
     <>
       <Box className='overlaysearch' onClick={searchbar}></Box>
@@ -77,7 +86,8 @@ export default function Header() {
         {/*   search-bar 
         --------------------------------------------------------------------------------------------------------------------------- */}
         <Button variant='outlined' className='toggle-btn dropdown' onClick={togglebtn} title='toggle-sidebar'>
-          <img src={toggleicon} alt="toggle-button" />
+          <img src={toggleicon} alt="toggle-button" className='toggle-icon' />
+          <img src={d_toggleicon} alt="toggle-button" className='dark-toggle-icon' />
         </Button>
         <NavLink className='brand-icon' to='/dashboard' title='company-logo'>
           <img src={brandicon} alt="company-logo" />
@@ -90,7 +100,8 @@ export default function Header() {
         --------------------------------------------------------------------------------------------------------------------------- */}
 
         <Button className="search-btn dropdown" title='search-here' onClick={searchbar}>
-          <img src={searchicon} alt="search-icon" />
+          <img src={searchicon} alt="search-icon" className='search-icon' />
+          <img src={d_searchicon} alt="search-icon" className='dark-search-icon' />
         </Button>
         <Button id="demo-customized-button"
           aria-controls={open1 ? 'demo-customized-menu' : undefined}
@@ -102,7 +113,8 @@ export default function Header() {
           className='dropdown notification-btn'
           title='notification-btn'
         >
-          <img src={notification} alt="notification-button" />
+          <img src={notification} alt="notification-button" className='bell-btn' />
+          <img src={d_notification} alt="notification-button" className='dark-bell-btn' />
         </Button>
         <StyledMenu
           id="demo-customized-menu"
@@ -141,6 +153,7 @@ export default function Header() {
             <Typography variant='body2' component='span' >Admin</Typography>
           </Box>
           <img alt="dropdown" src={dropdownwhite} className='dropdown-arrow'/>
+          <img alt="dropdown" src={d_dropdownwhite} className='dark-dropdown-arrow'/>
         </Button>
         <StyledMenu
           id="demo-customized-menu"
@@ -153,8 +166,11 @@ export default function Header() {
           className="menu-list"
         >
 
-          <MenuItem disableRipple onClick={handleClose2} >
+          <MenuItem disableRipple onClick={darktheme} >
             <Box onClick={handleClose2}>Dark theme</Box>
+          </MenuItem>
+          <MenuItem disableRipple onClick={lighttheme} >
+            <Box onClick={handleClose2}>Light theme</Box>
           </MenuItem>
           <MenuItem disableRipple onClick={handleClose2}>
             Action

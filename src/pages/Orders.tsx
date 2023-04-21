@@ -32,6 +32,7 @@ import { useNavigate } from "react-router-dom";
 import {
   checkedicon,
   checkedradio,
+  d_uploadicon,
   error,
   info,
   uncheckedicon,
@@ -41,6 +42,7 @@ import {
   warn,
 } from "../assets/images";
 import CloseIcon from "@mui/icons-material/Close";
+import Theme from "../components/Theme";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -385,7 +387,8 @@ export default function Orders() {
                     component="label"
                     className="upload-btn"
                   >
-                    <img src={uploadicon} alt="upload files" /> &nbsp; Upload
+                    <img src={uploadicon} alt="upload files" className="upload-icon" /> 
+                    <img src={d_uploadicon} alt="upload files" className="upload-icon-dark" /> &nbsp; Upload
                     <input hidden accept="image/*" multiple type="file" />
                   </Button>
                   <Typography component="span" variant="body2" className=" nis">
@@ -732,6 +735,7 @@ export default function Orders() {
           </Grid>
         </Box>
       </Box>
+      <Theme />
     </Box>
   );
 }

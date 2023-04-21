@@ -1,8 +1,9 @@
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Box, Button, Container, FormControl, Grid, IconButton, Input, InputAdornment, InputLabel, Link, OutlinedInput, TextField, Typography } from '@mui/material';
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { bgtriangle, brandlogo, mockup } from '../assets/images';
+import { bgtriangle, brandlogo, d_bgtriangle, d_brandlogo, d_lefttri, d_mockup, d_righttri, mockup } from '../assets/images';
+import Theme from '../components/Theme';
 
 export default function Login() {
     // for password -------------------------------
@@ -28,13 +29,14 @@ export default function Login() {
         <>
             <Box className='login-page'>
                 <Box className='hero-image '>
-                    <img src={mockup} alt="hero-image" className='img-fluid'/>
+                    <img src={mockup} alt="hero-image" className='img-fluid mockup'/>
+                    <img src={d_mockup} alt="hero-image" className='img-fluid d-mockup dark-theme'/>
+                    {/* <img src={d_lefttri} alt="hero-image" className='img-fluid d-left-tri'/> */}
                 </Box>
-        {/* <Container maxWidth='xl'> */}
                 <Box className="login-container">
                     <Link href="/" title="brand-logo"> 
-                    <img src={brandlogo} alt="logo" className='img-fluid' />
-                    {/* <Svgcolors fill='primary' /> */}
+                    <img src={brandlogo} alt="logo" className='img-fluid logo-light' />
+                    <img src={d_brandlogo} alt="logo" className='img-fluid logo-dark' />
                     </Link>
                     <Typography variant="h1" className="login-heading" marginBottom="6px" marginTop={{xs:'25px', md:'43px' }}>
                         Welcome Back!
@@ -92,8 +94,11 @@ export default function Login() {
                     </Box>
                 </Box>
             {/* </Container> */}
-                <img src={bgtriangle} alt="design-image" className='img-fluid' />
+                <img src={bgtriangle} alt="design-image" className='img-fluid bg-triangle' />
+                <img src={d_bgtriangle} alt="design-image" className='img-fluid d-bg-triangle' />
+                {/* <img src={d_righttri} alt="design-image" className='img-fluid d-right-tri' /> */}
             </Box>
+            <Theme />
         </>
     )
 }

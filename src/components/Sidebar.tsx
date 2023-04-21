@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography } from "@mui/material";
 import { NavLink } from 'react-router-dom'
-import { brandlogosmall, cards, cardsnew, dashboard, dashboardnew, invoices, invoicesnew, orders, ordersnew, setting, settingnew, transaction, transactionnew, wallet, walletnew } from '../assets/images';
+import { brandlogosmall, cards, cardsnew, d_brandlogosmall, d_dashboardnew, d_ordersnew, dashboard, dashboardnew, invoices, invoicesnew, orders, ordersnew, setting, settingnew, transaction, transactionnew, wallet, walletnew } from '../assets/images';
 
 export default function Sidebar() {
   function togglebtn() {
@@ -9,16 +9,18 @@ export default function Sidebar() {
   };
   return (
     <Box className='sidebar'>
-      <Box className="brand-logo"><NavLink to='/' title="brand-logo" > <img src={brandlogosmall} alt=""  /></NavLink></Box>
+      <Box className="brand-logo"><NavLink to='/' title="brand-logo" > <img src={brandlogosmall} alt=""className='cmp-logo' /><img src={d_brandlogosmall} alt=""className='cmp-logo-dark' /></NavLink></Box>
       <div>
       <NavLink to="/dashboard" className="sidelinks" title="Dashboard" onClick={togglebtn}>
         <img src={dashboard} alt="" className="default" />
         <img src={dashboardnew} alt="" className="active-img" />
+        <img src={d_dashboardnew} alt="" className="dark-active-img" />
         <Typography component='p' className="text-default">Dashboard</Typography>
       </NavLink>
       <NavLink to="/orders" className="sidelinks" title="Orders" onClick={togglebtn}>
         <img src={orders} alt="" className="default" />
         <img src={ordersnew} alt="" className="active-img" />
+        <img src={d_ordersnew} alt="" className="dark-active-img" />
         <Typography component='p' className="text-default">Orders</Typography>
       </NavLink>
       <NavLink to="/invoices" className="sidelinks" title="Invoices" onClick={togglebtn}>

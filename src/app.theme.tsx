@@ -1,18 +1,34 @@
 import { createTheme } from "@mui/material";
-// const currentDirection = "ltr";
-const primary = "#00A2A1";
+const currentDirection = "ltr";
+// const primary = "#00A2A1";
+// const primaryMain = "#009291";
+// const primaryContrast = '#F6f6F6';
+// const secondary = "#505050";
+// const secondaryMain = "#848484";
+// const secondaryLight = "#9C9C9C";
+// const secondaryContrast = "#A3A3A3";
+// const grey = "#B0B0B0";
+// const greyLight = "#E2E2E2";
+// const greyDark = "#BDBDBD";
+// const white = "#FFFFFF";
+// const black = "#000000";
+// const warning = "#cecece";
+
+
+const primary = "#59c2c3";
 const primaryMain = "#009291";
 const primaryContrast = '#F6f6F6';
-const secondary = "#505050";
+const secondary = "#dddddd";
 const secondaryMain = "#848484";
 const secondaryLight = "#9C9C9C";
-const secondaryContrast = "#A3A3A3";
-const grey = "#B0B0B0";
-const greyLight = "#E2E2E2";
-const greyDark = "#BDBDBD";
-const white = "#FFFFFF";
-const black = "#000000";
+const secondaryContrast = "#F4F4F4";
+const grey = "#808080";
+const greyLight = "#999999";
+const greyDark = "#999999";
+const white = "#202020";
+const black = "#f4f4f4";
 const warning = "#cecece";
+const bg = "#0e0e0e";
 
 export const appTheme = createTheme({
 //   direction: currentDirection,
@@ -105,6 +121,11 @@ components:{
                     lineHeight:"17px",
                     color:secondaryMain,
                 },
+                ".dark-theme &.register-here":{
+                    fontSize:"15px",
+                    lineHeight:"17px",
+                    color:secondary,
+                },
                 "&.card-subhead":{
                   color:black,
                   fontSize:"18px",
@@ -126,6 +147,18 @@ components:{
                 },
                 "&.valid-message":{
                   color:"#00AF27"
+                },
+                ".dark-theme &.error-message":{
+                  color:"#661515"
+                },
+                ".dark-theme &.warn-message":{
+                  color:"#664300"
+                },
+                ".dark-theme &.info-message":{
+                  color:"#004A5A"
+                },
+                ".dark-theme &.valid-message":{
+                  color:"#004610"
                 },
                 "&.text-message":{
                   fontSize:"15px",
@@ -183,6 +216,9 @@ components:{
                   "&.Mui-error":{
                     color:"#FF3939",
                   },
+                  ".dark-theme &.Mui-error":{
+                    color:"#FF4D4D",
+                  },
                 },
             },
         },
@@ -200,6 +236,12 @@ components:{
                 "&.Mui-error": {
                   color: "#FF3939",
                 },
+                ".dark-theme &.Mui-error": {
+                  color: "#FF4D4D",
+                },
+                ".dark-theme &.Mui-disabled":{
+                  color:"#787878",
+                },
             },
         },
     },
@@ -211,11 +253,17 @@ components:{
                     borderBottom:"1px solid" + greyDark,
                   },
                   "&.Mui-error:before":{
-                    borderBottom:"1px solid #ff3939",
+                    borderBottom:"1px solid #FF3939",
+                  },
+                  ".dark-theme &.Mui-error:before":{
+                    borderBottom:"1px solid #FF4D4D",
                   },
                 "&:hover:not(.Mui-disabled, .Mui-error):before":{
                   borderBottom:"1px solid rgba(0,0,0,0.5)" ,
-                }
+                },
+                ".dark-theme &:hover:not(.Mui-disabled, .Mui-error):before":{
+                  borderBottom:"1px solid rgba(0,240,240,0.5)" ,
+                },
             },
             input:{
                 fontSize:"15px",
@@ -224,6 +272,11 @@ components:{
                 color:secondary,
                 height:'17px',
                 padding:"5px 0 14px",
+                
+                ".dark-theme &.Mui-disabled":{
+                  color:"#787878",
+                  WebkitTextFillColor:"#787878",
+                },
             },
         },
     },
@@ -251,7 +304,7 @@ components:{
       styleOverrides: {
         root: {
           padding: "7px",
-          lineHeight:"normal"
+          // lineHeight:"normal"
         },
       },
     },
@@ -276,9 +329,28 @@ components:{
                     marginLeft: "auto",
                     marginRight: "10px",
                   },
-                  "& img":{
+                  "& .search-icon":{
                     width:"25px",
                     height:"25px",
+                  },
+                  "& .dark-search-icon":{
+                    display:"none",
+                  },
+                },
+                ".dark-theme &.search-btn": {
+                  display: "none",
+                  "@media (max-width:899px)": {
+                    display: "flex",
+                    marginLeft: "auto",
+                    marginRight: "10px",
+                  },
+                  "& .dark-search-icon":{
+                    display:"flex",
+                    width:"25px",
+                    height:"25px",
+                  },
+                  "& .search-icon":{
+                    display:"none",
                   },
                 },
                 "&.notification-btn": {
@@ -287,6 +359,23 @@ components:{
                   "@media (max-width:899px)": {
                     marginRight: "10px",
                     marginLeft:'0'
+                  },
+                  "& .dark-bell-btn":{
+                    display:"none",
+                  },
+                },
+                ".dark-theme &.notification-btn": {
+                  marginLeft: "auto",
+                  marginRight: "28px",
+                  "@media (max-width:899px)": {
+                    marginRight: "10px",
+                    marginLeft:'0'
+                  },
+                  "& .bell-btn":{
+                    display:"none",
+                  },
+                  "& .dark-bell-btn":{
+                    display:"block",
                   },
                 },
                 "&.dropdown": {
@@ -315,6 +404,30 @@ components:{
                     "& .dropdown-arrow, & .profile-name":{
                       display:"none",
                     },
+                  },
+                  "& .dark-dropdown-arrow":{
+                    display:"none",
+                  },
+                },
+                ".dark-theme &.menu":{
+                  padding:"10px",
+                  display:"flex",
+                  alignItems:"center",
+                  textAlign:"start",
+                  minWidth:"auto",
+                  height:"auto",
+                  textTransform:"capitalize",
+                  "@media (max-width:599px)": {
+                    padding: "5px",
+                    "& .dark-dropdown-arrow, & .profile-name":{
+                      display:"none",
+                    },
+                  },
+                  "& .dark-dropdown-arrow":{
+                    display:"block",
+                  },
+                  "& .dropdown-arrow":{
+                    display:"none",
                   },
                 },
                 "&.card-dots":{
@@ -355,6 +468,10 @@ components:{
                   textTransform: "lowercase",
                   color: secondary,
                 },
+                ".dark-theme .upload-content &.MuiButton-root":{
+                  color:secondaryContrast,
+                  backgroundColor:'#363636',
+                },
             },
         },
     },
@@ -364,6 +481,11 @@ components:{
                 textDecoration:"none",
                 "&.forgot-password":{
                     color:secondaryMain,
+                    fontSize:"15px",
+                    lineHeight:"17px",
+                },
+                ".dark-theme &.forgot-password":{
+                    color:secondary,
                     fontSize:"15px",
                     lineHeight:"17px",
                 },
@@ -381,6 +503,10 @@ components:{
       styleOverrides: {
         paper: {
           boxShadow: "0px 4px 15px -4px rgba(0, 0, 0, 0.1)",
+          ".dark-theme &.MuiPopover-paper":{
+            color:black ,
+            backgroundColor:'#1A1A1A',
+          },
         },
       },
     },
@@ -392,6 +518,9 @@ components:{
           fontWeight: "400",
           lineHeight: "21px",
           borderBottom: "1px solid #E4E4E4",
+          ".dark-theme &.MuiTableCell-root":{
+            borderBottom: "1px solid #999999",
+          },
         },
         body: {
           color: secondary,
@@ -455,20 +584,40 @@ components:{
             border:"1px solid #FFC9C9",
             color:"#FF3535",
           },
+          ".dark-theme &.text-danger":{
+            backgroundColor: "#FF9C9C",
+            border:"1px solid transparent",
+            color:"#661515",
+          },
           "&.text-info": {
             backgroundColor: '#F3FDFF',
             border:"1px solid #BAF3FF",
             color:"#00B9E1",
+          },
+          ".dark-theme &.text-info":{
+            backgroundColor: "#82DDF0",
+            border:"1px solid transparent",
+            color:"#004A5A",
           },
           "&.text-warn": {
             backgroundColor: "#FFFCF5",
             border:"1px solid #FFDFA0",
             color:"#FFA800",
           },
+          ".dark-theme &.text-warn":{
+            backgroundColor: "#FFD482",
+            border:"1px solid transparent",
+            color:"#664300",
+          },
           "&.text-success": {
             backgroundColor: "#F5FFF8",
             border:"1px solid #9AFFB0",
             color:"#00AF27",
+          },
+          ".dark-theme &.text-success":{
+            backgroundColor: "#82D895",
+            border:"1px solid transparent",
+            color:"#004610",
           },
         },
         message: {
@@ -525,8 +674,16 @@ components:{
               color: grey,
               background: 'rgba(50, 179, 179, 0.15)',
             },
+            ".dark-theme &:hover , .dark-theme &:active , .dark-theme &:focus": {
+              color: grey,
+              background: 'rgba(5, 19, 19, 0.3)',
+            },
           },
           "&.tabs.Mui-selected": {
+            color: primary,
+            fontWeight: "500",
+          },
+          ".dark-theme &.tabs.Mui-selected": {
             color: primary,
             fontWeight: "500",
           },

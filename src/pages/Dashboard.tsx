@@ -2,9 +2,10 @@ import React from 'react'
 import Sidebar from '../components/Sidebar'
 import Header from '../components/Header'
 import { Box, Button, Grid, Menu, MenuItem, MenuProps, Typography, styled,Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton } from '@mui/material'
-import { cost, datagraph, deals, menuicon, profit, sale, tablemenu, tree, wallet } from '../assets/images'
+import { cost, d_cost, d_datagraph, d_deals, d_profit, d_sale, d_tree, datagraph, deals, menuicon, profit, sale, tablemenu, tree, wallet } from '../assets/images'
 import { useNavigate } from 'react-router-dom'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import Theme from '../components/Theme'
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -85,7 +86,8 @@ export default function Dashboard() {
               <Grid item xs={12} sm={6} lg={3}>
                 <Box className='sticker'>
                   <Box className='sticker-content'>
-                    <img src={sale} alt="total-sale-image" />
+                    <img src={sale} alt="total-sale-image" className='card-icons' />
+                    <img src={d_sale} alt="total-sale-image" className='d-card-icons' />
                     <Box className='card-data'>
                       <Typography component='span' variant='body2' >Total Sale</Typography>
                       <Typography component='p' variant='h2' >34,789</Typography>
@@ -98,7 +100,8 @@ export default function Dashboard() {
               <Grid item xs={12} sm={6} lg={3}>
                 <Box className='sticker'>
                   <Box className='sticker-content'>
-                    <img src={tree} alt="total-sale-image" />
+                    <img src={tree} alt="total-sale-image" className='card-icons' />
+                    <img src={d_tree} alt="total-sale-image" className='d-card-icons' />
                     <Box className='card-data'>
                       <Typography component='span' variant='body2' >Total Lead</Typography>
                       <Typography component='p' variant='h2' >54,899</Typography>
@@ -111,7 +114,8 @@ export default function Dashboard() {
               <Grid item xs={12} sm={6} lg={3}>
                 <Box className='sticker'>
                   <Box className='sticker-content'>
-                    <img src={profit} alt="total-sale-image" />
+                    <img src={profit} alt="total-sale-image" className='card-icons' />
+                    <img src={d_profit} alt="total-sale-image" className='d-card-icons' />
                     <Box className='card-data'>
                       <Typography component='span' variant='body2' >Total Profit</Typography>
                       <Typography component='p' variant='h2' >45,677</Typography>
@@ -124,7 +128,8 @@ export default function Dashboard() {
               <Grid item xs={12} sm={6} lg={3}>
                 <Box className='sticker'>
                   <Box className='sticker-content'>
-                    <img src={cost} alt="total-sale-image" />
+                    <img src={cost} alt="total-sale-image" className='card-icons' />
+                    <img src={d_cost} alt="total-sale-image" className='d-card-icons' />
                     <Box className='card-data'>
                       <Typography component='span' variant='body2' >Total Cost</Typography>
                       <Typography component='p' variant='h2' >103,678</Typography>
@@ -169,7 +174,8 @@ export default function Dashboard() {
                       </MenuItem>
                     </StyledMenu>
                   </Box>
-                  <img src={datagraph} alt="data-graph" className='img-fluid' />
+                  <img src={datagraph} alt="data-graph" className='img-fluid graph-img' />
+                  <img src={d_datagraph} alt="data-graph" className='img-fluid d-graph-img' />
                 </Box>
               </Grid>
 
@@ -211,6 +217,7 @@ export default function Dashboard() {
                   <Typography variant='h4' component='h4' className='weekly-total' >$ 800,678</Typography>
                   <Typography variant='body2' component='span' >Used Balance Current deals</Typography>
                   <img src={deals} alt="weekly-graph" className='img-fluid weekly-img' />
+                  <img src={d_deals} alt="weekly-graph" className='img-fluid d-weekly-img' />
                 </Box>
               </Grid>
 
@@ -322,6 +329,7 @@ export default function Dashboard() {
           </Box>
         </Box>
       </Box>
+      <Theme />
     </>
   )
 }
