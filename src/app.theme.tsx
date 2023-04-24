@@ -1,5 +1,6 @@
-import { createTheme } from "@mui/material";
-const currentDirection = "ltr";
+import { PaletteMode, createTheme } from "@mui/material";
+import React from "react";
+
 // const primary = "#00A2A1";
 // const primaryMain = "#009291";
 // const primaryContrast = '#F6f6F6';
@@ -16,7 +17,7 @@ const currentDirection = "ltr";
 
 
 const primary = "#59c2c3";
-const primaryMain = "#009291";
+const primaryMain = "#31b3b3";
 const primaryContrast = '#F6f6F6';
 const secondary = "#dddddd";
 const secondaryMain = "#848484";
@@ -31,17 +32,41 @@ const warning = "#cecece";
 const bg = "#0e0e0e";
 
 export const appTheme = createTheme({
-//   direction: currentDirection,
+ 
   palette: {
+    // mode,
+    // ...(mode === 'light'
+    //   ? {
+    //       // palette values for light mode
+    //       primary: primary,
+    //       divider: primary[200],
+    //       text: {
+    //         primary: grey[900],
+    //         secondary: grey[800],
+    //       },
+    //     }
+    //   : {
+    //       // palette values for dark mode
+    //       primary: primary,
+    //       divider: primary[700],
+    //       background: {
+    //         default: primary[900],
+    //         paper: primary[900],
+    //       },
+    //       text: {
+    //         primary: '#fff',
+    //         secondary: grey[500],
+    //       },
+    //     }),
     primary: {
       main: primary,
       light: "#1aabaa",
-      dark: "#009291",
+      dark: primaryMain,
     },
     secondary: {
       main: secondary,
       light: "#626262",
-      dark: "#404040",
+      dark: secondaryMain,
     },
     info: {
       main: white,
@@ -255,6 +280,12 @@ components:{
                   "&.Mui-error:before":{
                     borderBottom:"1px solid #FF3939",
                   },
+                  "&.Mui-disabled:before":{
+                    borderBottom:"1px dashed" + greyDark,
+                  },
+                  ".dark-theme &.Mui-disabled:before":{
+                    borderBottom:"1px dashed #787878" ,
+                  },
                   ".dark-theme &.Mui-error:before":{
                     borderBottom:"1px solid #FF4D4D",
                   },
@@ -276,6 +307,13 @@ components:{
                 ".dark-theme &.Mui-disabled":{
                   color:"#787878",
                   WebkitTextFillColor:"#787878",
+                },
+                "&.MuiSelect-select":{
+                  height:"17px",
+                  minHeight: '17px',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
                 },
             },
         },
@@ -315,13 +353,21 @@ components:{
                 "&.login-btn":{
                     padding:"15px 30px",
                     "& span":{
-                      fontSize:"15px",
+                      fontSize:"18px",
                       fontWeight:"700",
                       lineHeight:"21px",
                       textTransform:"uppercase",
                       color:white,
                     },
-                },
+                    "@media (max-width:599px)": {
+                      padding:"11px 30px",
+                    },
+                  },
+                  ".dark-theme &.login-btn ":{
+                    "& span":{
+                      color:black,
+                    },
+                  },
                 "&.search-btn": {
                   display: "none",
                   "@media (max-width:899px)": {
@@ -417,31 +463,30 @@ components:{
                   minWidth:"auto",
                   height:"auto",
                   textTransform:"capitalize",
-                  "@media (max-width:599px)": {
-                    padding: "5px",
-                    "& .dark-dropdown-arrow, & .profile-name":{
-                      display:"none",
-                    },
-                  },
                   "& .dark-dropdown-arrow":{
                     display:"block",
                   },
                   "& .dropdown-arrow":{
                     display:"none",
                   },
+                  "@media (max-width:599px)": {
+                    padding: "5px",
+                    "& .dark-dropdown-arrow, & .profile-name":{
+                      display:"none",
+                    },
+                  },
                 },
                 "&.card-dots":{
                   padding:'3px',
                   background:"transparent",
                   minWidth:"30px",
-                  height:"fit-content",
-                  border:"1px solid transparent",
+                  height:"30px",
+                  borderRadius:"50px",
                   "&:hover, &:active":{
-                    border:"1px solid" + secondaryMain,
+                    backgroundColor:"rgba(176,176,176,0.1)",
                   },
                   ".MuiTouchRipple-root":{
                     color:grey,
-                    borderRadius:"50px",
                   },
                 },
                 "&.primary-btn":{
@@ -506,6 +551,7 @@ components:{
           ".dark-theme &.MuiPopover-paper":{
             color:black ,
             backgroundColor:'#1A1A1A',
+            boxShadow: "0px 0px 10px 0px rgba(255, 255, 255, 0.05)",
           },
         },
       },
@@ -519,7 +565,7 @@ components:{
           lineHeight: "21px",
           borderBottom: "1px solid #E4E4E4",
           ".dark-theme &.MuiTableCell-root":{
-            borderBottom: "1px solid #999999",
+            borderBottom: "1px solid rgba(153,153,153,0.8)",
           },
         },
         body: {
@@ -534,6 +580,7 @@ components:{
           fontWeight: "500",
           fontSize: "18px",
           height: "52px",
+          letterSpacing: '0.05em',
           textTransform: "uppercase",
         },
       },
@@ -699,3 +746,7 @@ components:{
 
 
 });
+
+function setMode(arg0: (prevMode: PaletteMode) => "light" | "dark") {
+  throw new Error("Function not implemented.");
+}

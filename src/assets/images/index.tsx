@@ -71,7 +71,13 @@ export const checkedicon = require ("./checked-ic.svg").default
 export const uncheckedicon = require ("./unchecked-ic.svg").default
 export const uncheckedradio = require ("./unchecked-radio-ic.svg").default
 export const checkedradio = require ("./checked-radio-ic.svg").default
-
+// dark orders page----------
 export const d_uploadicon = require ("./ic-upload-dark.svg").default
 export const moon = require ("./moon.svg").default
 export const sun = require ("./sun.svg").default
+export const d_checkedicon = require ("./checked-ic-dark.svg").default
+export const d_checkedradio = require ("./checked-radio-ic-dark.svg").default
+export const d_error = require ("./error-ic-dark.svg").default
+export const d_warn = require ("./warn-ic-dark.svg").default
+export const d_info = require ("./info-ic-dark.svg").default
+export const d_valid = require ("./success-ic-dark.svg").default

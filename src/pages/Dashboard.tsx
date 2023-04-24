@@ -139,7 +139,7 @@ export default function Dashboard() {
                 </Box>
               </Grid>
 
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12} lg={8}>
                 <Box className='sticker'>
                   <Box className='card-heading-line'>
                     <Typography variant='h6' className='card-subhead'>Total Cost</Typography>
@@ -179,7 +179,7 @@ export default function Dashboard() {
                 </Box>
               </Grid>
 
-              <Grid item xs={12} md={4}>
+              <Grid item xs={12} lg={4}>
                 <Box className='sticker'>
                   <Box className='card-heading-line'>
                     <Typography variant='h6' className='card-subhead'>Current Deals</Typography>
@@ -215,7 +215,7 @@ export default function Dashboard() {
                     </StyledMenu>
                   </Box>
                   <Typography variant='h4' component='h4' className='weekly-total' >$ 800,678</Typography>
-                  <Typography variant='body2' component='span' >Used Balance Current deals</Typography>
+                  <Typography variant='body2' component='span' display='block'>Used Balance Current deals</Typography>
                   <img src={deals} alt="weekly-graph" className='img-fluid weekly-img' />
                   <img src={d_deals} alt="weekly-graph" className='img-fluid d-weekly-img' />
                 </Box>
@@ -251,9 +251,6 @@ export default function Dashboard() {
                       <MenuItem disableRipple onClick={handleClose}>
                         Action
                       </MenuItem>
-                      <MenuItem onClick={() => { navigate('/'); }} disableRipple>
-                        Logout
-                      </MenuItem>
                     </StyledMenu>
                   </Box>
                   
@@ -273,7 +270,7 @@ export default function Dashboard() {
                           {rows.map((row) => (
                             <TableRow
                               key={row.order}
-                              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                              sx={{ '&:last-child td, &:last-child th, .dark-theme &:last-child td, .dark-theme &:last-child th': { border: 0 } }}
                             >
                               <TableCell scope="row">{row.order}</TableCell>
                               <TableCell align="left">{row.email}</TableCell>

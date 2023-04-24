@@ -32,7 +32,13 @@ import { useNavigate } from "react-router-dom";
 import {
   checkedicon,
   checkedradio,
+  d_checkedicon,
+  d_checkedradio,
+  d_error,
+  d_info,
   d_uploadicon,
+  d_valid,
+  d_warn,
   error,
   info,
   uncheckedicon,
@@ -73,6 +79,12 @@ function a11yProps(index: number) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
+
+// function helperfn() {    
+
+//   if (this.state.data.name.trim().length==0) return 'Can not be empty';
+//   if (this.state.data.name.replace(/[a-zA-Z0-9_ ]/g, '').length>0) return 'Only letters and numbers';
+// }  
 
 export default function Orders() {
   const navigate = useNavigate();
@@ -258,7 +270,7 @@ export default function Orders() {
                   rowSpacing={{ xs: 2, sm: 3 }}
                   columnSpacing={{ xs: 2, sm: 3, md: 4 }}
                 >
-                  <Grid item xs={12} sm={4}>
+                  <Grid item xs={12} md={4}>
                     <Box component="form" noValidate autoComplete="off">
                       <TextField
                         className="error-text"
@@ -407,6 +419,7 @@ export default function Orders() {
                 </Typography>
                 <Grid item xs={12}>
                   <FormControlLabel
+                  className="l-checkbox"
                     control={
                       <Checkbox
                         color="primary"
@@ -416,13 +429,37 @@ export default function Orders() {
                     }
                     label="Selected"
                   />
-                  &nbsp;&nbsp;&nbsp;
+                  {/* &nbsp;&nbsp;&nbsp; */}
                   <FormControlLabel
+                  className="l-checkbox"
                     control={
                       <Checkbox
                         color="primary"
                         icon={<Icon>{<img src={uncheckedicon} />}</Icon>}
                         checkedIcon={<Icon>{<img src={checkedicon} />}</Icon>}
+                      />
+                    }
+                    label="Not yet Selected"
+                  />
+                  <FormControlLabel
+                  className="d-checkbox"
+                    control={
+                      <Checkbox
+                        color="primary"
+                        icon={<Icon>{<img src={uncheckedicon} />}</Icon>}
+                        checkedIcon={<Icon>{<img src={d_checkedicon} />}</Icon>}
+                      />
+                    }
+                    label="Selected"
+                  />
+                  {/* &nbsp;&nbsp;&nbsp; */}
+                  <FormControlLabel
+                  className="d-checkbox"
+                    control={
+                      <Checkbox
+                        color="primary"
+                        icon={<Icon>{<img src={uncheckedicon} />}</Icon>}
+                        checkedIcon={<Icon>{<img src={d_checkedicon} />}</Icon>}
                       />
                     }
                     label="Not yet Selected"
@@ -459,7 +496,7 @@ export default function Orders() {
                         }
                         label="Selected"
                       />
-                      &nbsp;&nbsp;&nbsp;
+                      {/* &nbsp;&nbsp;&nbsp; */}
                       <FormControlLabel
                         value="not yet selected"
                         control={
@@ -467,6 +504,40 @@ export default function Orders() {
                             icon={<Icon>{<img src={uncheckedradio} />}</Icon>}
                             checkedIcon={
                               <Icon>{<img src={checkedradio} />}</Icon>
+                            }
+                          />
+                        }
+                        label="Not yet Selected"
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                  <FormControl className="d-radio-check">
+                    <RadioGroup
+                      row
+                      aria-labelledby="demo-row-radio-buttons-group-label"
+                      name="row-radio-buttons-group"
+                      defaultValue="selected"
+                    >
+                      <FormControlLabel
+                        value="selected"
+                        control={
+                          <Radio
+                            icon={<Icon>{<img src={uncheckedradio} />}</Icon>}
+                            checkedIcon={
+                              <Icon>{<img src={d_checkedradio} />}</Icon>
+                            }
+                          />
+                        }
+                        label="Selected"
+                      />
+                      {/* &nbsp;&nbsp;&nbsp; */}
+                      <FormControlLabel
+                        value="not yet selected"
+                        control={
+                          <Radio
+                            icon={<Icon>{<img src={uncheckedradio} />}</Icon>}
+                            checkedIcon={
+                              <Icon>{<img src={d_checkedradio} />}</Icon>
                             }
                           />
                         }
@@ -510,13 +581,14 @@ export default function Orders() {
                             </IconButton>
                           }
                         >
-                          <img src={error} alt="" />
+                          <img src={error} alt=""  className="error-ic"/>
+                          <img src={d_error} alt=""  className="error-ic-d"/>
                           <Typography
                             component="p"
                             variant="body2"
                             className="text-message error-message"
                           >
-                            This is an error Message
+                            This is an error Message!
                           </Typography>
                         </Alert>
                       </Collapse>
@@ -541,7 +613,8 @@ export default function Orders() {
                             </IconButton>
                           }
                         >
-                          <img src={info} alt="" />
+                          <img src={info} alt="" className="info-ic"/>
+                          <img src={d_info} alt="" className="info-ic-d"/>
                           <Typography
                             component="p"
                             variant="body2"
@@ -571,7 +644,8 @@ export default function Orders() {
                             </IconButton>
                           }
                         >
-                          <img src={warn} alt="" />
+                          <img src={warn} alt="" className="warn-ic"/>
+                          <img src={d_warn} alt="" className="warn-ic-d"/>
                           <Typography
                             component="p"
                             variant="body2"
@@ -601,7 +675,8 @@ export default function Orders() {
                             </IconButton>
                           }
                         >
-                          <img src={valid} alt="" />
+                          <img src={valid} alt="" className="valid-ic"/>
+                          <img src={d_valid} alt="" className="valid-ic-d"/>
                           <Typography
                             component="p"
                             variant="body2"

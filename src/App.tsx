@@ -8,7 +8,10 @@ import { appTheme } from './app.theme';
 import Dashboard from './pages/Dashboard';
 import Orders from './pages/Orders';
 
-function App() {
+
+  
+  export default function App() {
+
   return (
     <div className="App">
       <ThemeProvider theme = {appTheme}>
@@ -24,4 +27,3 @@ function App() {
   );
 }
 
-export default App;

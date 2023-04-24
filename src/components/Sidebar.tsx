@@ -9,8 +9,11 @@ export default function Sidebar() {
   };
   return (
     <Box className='sidebar'>
-      <Box className="brand-logo"><NavLink to='/' title="brand-logo" > <img src={brandlogosmall} alt=""className='cmp-logo' /><img src={d_brandlogosmall} alt=""className='cmp-logo-dark' /></NavLink></Box>
-      <div>
+      <Box className="brand-logo">
+        <NavLink to='/' title="brand-logo" > <img src={brandlogosmall} alt="" className='cmp-logo' /> </NavLink>
+        <NavLink to='/' title="brand-logo" > <img src={d_brandlogosmall} alt="" className='cmp-logo-dark' /> </NavLink>
+      </Box>
+      <ul className='sidebar-content'>
       <NavLink to="/dashboard" className="sidelinks" title="Dashboard" onClick={togglebtn}>
         <img src={dashboard} alt="" className="default" />
         <img src={dashboardnew} alt="" className="active-img" />
@@ -48,7 +51,7 @@ export default function Sidebar() {
         <img src={settingnew} alt="" className="active-img" />
         <Typography component='p' className="text-default">Setting</Typography>
       </NavLink>
-      </div>
+      </ul>
     </Box>
   )
 }
