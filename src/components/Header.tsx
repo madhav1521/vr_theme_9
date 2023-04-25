@@ -87,7 +87,7 @@ export default function Header() {
         --------------------------------------------------------------------------------------------------------------------------- */}
         <Button variant='outlined' className='toggle-btn dropdown' onClick={togglebtn} title='toggle-sidebar'>
           <img src={toggleicon} alt="toggle-button" className='toggle-icon' />
-          <img src={d_toggleicon} alt="toggle-button" className='dark-toggle-icon' />
+          {/* <img src={d_toggleicon} alt="toggle-button" className='dark-toggle-icon' /> */}
         </Button>
         <NavLink className='brand-icon' to='/dashboard' title='company-logo'>
           <img src={brandicon} alt="company-logo" />
@@ -101,7 +101,7 @@ export default function Header() {
 
         <Button className="search-btn dropdown" title='search-here' onClick={searchbar}>
           <img src={searchicon} alt="search-icon" className='search-icon' />
-          <img src={d_searchicon} alt="search-icon" className='dark-search-icon' />
+          {/* <img src={d_searchicon} alt="search-icon" className='dark-search-icon' /> */}
         </Button>
         <Button id="demo-customized-button"
           aria-controls={open1 ? 'demo-customized-menu' : undefined}
@@ -114,7 +114,7 @@ export default function Header() {
           title='notification-btn'
         >
           <img src={notification} alt="notification-button" className='bell-btn' />
-          <img src={d_notification} alt="notification-button" className='dark-bell-btn' />
+          {/* <img src={d_notification} alt="notification-button" className='dark-bell-btn' /> */}
         </Button>
         <StyledMenu
           id="demo-customized-menu"
@@ -153,7 +153,7 @@ export default function Header() {
             <Typography variant='body2' component='span' >Admin</Typography>
           </Box>
           <img alt="dropdown" src={dropdownwhite} className='dropdown-arrow'/>
-          <img alt="dropdown" src={d_dropdownwhite} className='dark-dropdown-arrow'/>
+          {/* <img alt="dropdown" src={d_dropdownwhite} className='dark-dropdown-arrow'/> */}
         </Button>
         <StyledMenu
           id="demo-customized-menu"

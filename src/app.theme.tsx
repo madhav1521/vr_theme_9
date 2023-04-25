@@ -69,7 +69,7 @@ export const appTheme = createTheme({
       dark: secondaryMain,
     },
     info: {
-      main: white,
+      main: '#ffffff',
       light: "#ebebeb",
       dark: "#bababa",
     },
@@ -335,6 +335,11 @@ components:{
         root: {
           padding: "7px",
           // lineHeight:"normal"
+          "& .MuiIcon-root":{
+            display:"flex",
+            justifyContent:"center",
+            alignItems:"center",
+          },
         },
       },
     },
@@ -343,6 +348,11 @@ components:{
         root: {
           padding: "7px",
           // lineHeight:"normal"
+          "& .MuiIcon-root":{
+            display:"flex",
+            justifyContent:"center",
+            alignItems:"center",
+          },
         },
       },
     },
@@ -368,6 +378,19 @@ components:{
                       color:black,
                     },
                   },
+                  "&.dropdown": {
+                    border: "1px solid transparent",
+                    padding: "10px",
+                    background:'transparent',
+                    minWidth:'40px',
+                   borderRadius:"5px",
+                    "&:hover, &:focus, &:active": {
+                      backgroundColor:"rgba(0, 121, 121, 0.4)"
+                    },
+                    "@media (max-width:899px)": {
+                      padding: "5px",
+                    },
+                  },
                 "&.search-btn": {
                   display: "none",
                   "@media (max-width:899px)": {
@@ -383,58 +406,16 @@ components:{
                     display:"none",
                   },
                 },
-                ".dark-theme &.search-btn": {
-                  display: "none",
-                  "@media (max-width:899px)": {
-                    display: "flex",
-                    marginLeft: "auto",
-                    marginRight: "10px",
-                  },
-                  "& .dark-search-icon":{
-                    display:"flex",
-                    width:"25px",
-                    height:"25px",
-                  },
-                  "& .search-icon":{
-                    display:"none",
-                  },
-                },
                 "&.notification-btn": {
                   marginLeft: "auto",
                   marginRight: "28px",
+                  borderRadius:"50px",
                   "@media (max-width:899px)": {
                     marginRight: "10px",
                     marginLeft:'0'
                   },
                   "& .dark-bell-btn":{
                     display:"none",
-                  },
-                },
-                ".dark-theme &.notification-btn": {
-                  marginLeft: "auto",
-                  marginRight: "28px",
-                  "@media (max-width:899px)": {
-                    marginRight: "10px",
-                    marginLeft:'0'
-                  },
-                  "& .bell-btn":{
-                    display:"none",
-                  },
-                  "& .dark-bell-btn":{
-                    display:"block",
-                  },
-                },
-                "&.dropdown": {
-                  border: "1px solid transparent",
-                  padding: "10px",
-                  background:'transparent',
-                  minWidth:'40px',
-                  height:'40px',
-                  "&:hover, &:focus, &:active": {
-                    border: "1px solid" + white,
-                  },
-                  "@media (max-width:899px)": {
-                    padding: "5px",
                   },
                 },
                 "&.menu":{
@@ -463,12 +444,6 @@ components:{
                   minWidth:"auto",
                   height:"auto",
                   textTransform:"capitalize",
-                  "& .dark-dropdown-arrow":{
-                    display:"block",
-                  },
-                  "& .dropdown-arrow":{
-                    display:"none",
-                  },
                   "@media (max-width:599px)": {
                     padding: "5px",
                     "& .dark-dropdown-arrow, & .profile-name":{
@@ -503,6 +478,9 @@ components:{
                   lineHeight: "21px",
                   color:primary,
                   border:"2px solid" + primary,
+                  "&:hover":{
+                    backgroundColor: "rgba(0, 21, 21, 0.4)",
+                  },
                 },
                 ".upload-content &.MuiButton-root": {
                   padding: "9px 22px",
@@ -514,11 +492,29 @@ components:{
                   color: secondary,
                 },
                 ".dark-theme .upload-content &.MuiButton-root":{
-                  color:secondaryContrast,
-                  backgroundColor:'#363636',
+                  color:white,
+                  backgroundColor:primary,
+                  "&:hover":{
+                  backgroundColor:primaryMain,
+                  },
                 },
             },
         },
+    },
+    MuiMenuItem:{
+      styleOverrides:{
+        root:{
+          "& .MuiTouchRipple-root":{
+            color:primary,
+          },
+          "&:hover":{
+            backgroundColor:"rgba(0, 121, 121, 0.4)",
+          },
+          "&:active":{
+            backgroundColor:"rgba(0, 121, 121, 0.4)",
+          },
+        },
+      },
     },
     MuiLink:{
         styleOverrides:{
@@ -720,6 +716,7 @@ components:{
             "&:hover , &:active , &:focus": {
               color: grey,
               background: 'rgba(50, 179, 179, 0.15)',
+              borderRadius:"5px",
             },
             ".dark-theme &:hover , .dark-theme &:active , .dark-theme &:focus": {
               color: grey,

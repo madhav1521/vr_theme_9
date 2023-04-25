@@ -105,8 +105,6 @@ export default function Orders() {
   };
   //   for select option --------------------------
   const [age1, setAge1] = React.useState("");
-  const [age2, setAge2] = React.useState("");
-  const [age3, setAge3] = React.useState("");
 
   const handleChange1 = (event: SelectChangeEvent) => {
     setAge1(event.target.value as string);
@@ -400,7 +398,7 @@ export default function Orders() {
                     className="upload-btn"
                   >
                     <img src={uploadicon} alt="upload files" className="upload-icon" /> 
-                    <img src={d_uploadicon} alt="upload files" className="upload-icon-dark" /> &nbsp; Upload
+                    <img src={d_uploadicon} alt="upload files" className="upload-icon-dark" />&nbsp; Upload 
                     <input hidden accept="image/*" multiple type="file" />
                   </Button>
                   <Typography component="span" variant="body2" className=" nis">
@@ -563,7 +561,7 @@ export default function Orders() {
                   columnSpacing={{ xs: 2, sm: 3, md: 4 }}
                   className="validation-notes"
                 >
-                  <Grid item xs={12} md={6} onClick={snackbara} id="alert-a">
+                  <Grid item xs={12} md={6} id="alert-a">
                     <Box>
                       <Collapse in={open1}>
                         <Alert
@@ -577,7 +575,7 @@ export default function Orders() {
                                 setOpen1(false);
                               }}
                             >
-                              <CloseIcon fontSize="inherit" />
+                              <CloseIcon fontSize="inherit" onClick={snackbara}/>
                             </IconButton>
                           }
                         >
@@ -594,7 +592,7 @@ export default function Orders() {
                       </Collapse>
                     </Box>
                   </Grid>
-                  <Grid item xs={12} md={6} onClick={snackbarb} id="alert-b">
+                  <Grid item xs={12} md={6} id="alert-b">
                     <Box>
                       <Collapse in={open2}>
                         <Alert
@@ -609,7 +607,7 @@ export default function Orders() {
                                 setOpen2(false);
                               }}
                             >
-                              <CloseIcon fontSize="inherit" />
+                              <CloseIcon fontSize="inherit" onClick={snackbarb} />
                             </IconButton>
                           }
                         >
@@ -626,7 +624,7 @@ export default function Orders() {
                       </Collapse>
                     </Box>
                   </Grid>
-                  <Grid item xs={12} md={6} onClick={snackbarc} id="alert-c">
+                  <Grid item xs={12} md={6} id="alert-c">
                     <Box>
                       <Collapse in={open3}>
                         <Alert
@@ -640,7 +638,7 @@ export default function Orders() {
                                 setOpen3(false);
                               }}
                             >
-                              <CloseIcon fontSize="inherit" />
+                              <CloseIcon fontSize="inherit" onClick={snackbarc} />
                             </IconButton>
                           }
                         >
@@ -657,7 +655,7 @@ export default function Orders() {
                       </Collapse>
                     </Box>
                   </Grid>
-                  <Grid item xs={12} md={6} onClick={snackbard} id="alert-d">
+                  <Grid item xs={12} md={6} id="alert-d">
                     <Box>
                       <Collapse in={open4}>
                         <Alert
@@ -671,7 +669,7 @@ export default function Orders() {
                                 setOpen4(false);
                               }}
                             >
-                              <CloseIcon fontSize="inherit" />
+                              <CloseIcon fontSize="inherit" onClick={snackbard} />
                             </IconButton>
                           }
                         >

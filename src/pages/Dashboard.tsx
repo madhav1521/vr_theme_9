@@ -84,7 +84,7 @@ export default function Dashboard() {
             <Typography variant='h3' marginBottom={{xs:'15px', sm:'20px', md:'30px'}}>Dashboard</Typography>
             <Grid container spacing={{xs:2, sm:3, md:4}}>
               <Grid item xs={12} sm={6} lg={3}>
-                <Box className='sticker'>
+                <Box className='sticker top-card'>
                   <Box className='sticker-content'>
                     <img src={sale} alt="total-sale-image" className='card-icons' />
                     <img src={d_sale} alt="total-sale-image" className='d-card-icons' />
@@ -98,7 +98,7 @@ export default function Dashboard() {
               </Grid>
 
               <Grid item xs={12} sm={6} lg={3}>
-                <Box className='sticker'>
+                <Box className='sticker top-card'>
                   <Box className='sticker-content'>
                     <img src={tree} alt="total-sale-image" className='card-icons' />
                     <img src={d_tree} alt="total-sale-image" className='d-card-icons' />
@@ -112,7 +112,7 @@ export default function Dashboard() {
               </Grid>
 
               <Grid item xs={12} sm={6} lg={3}>
-                <Box className='sticker'>
+                <Box className='sticker top-card'>
                   <Box className='sticker-content'>
                     <img src={profit} alt="total-sale-image" className='card-icons' />
                     <img src={d_profit} alt="total-sale-image" className='d-card-icons' />
@@ -126,7 +126,7 @@ export default function Dashboard() {
               </Grid>
 
               <Grid item xs={12} sm={6} lg={3}>
-                <Box className='sticker'>
+                <Box className='sticker top-card'>
                   <Box className='sticker-content'>
                     <img src={cost} alt="total-sale-image" className='card-icons' />
                     <img src={d_cost} alt="total-sale-image" className='d-card-icons' />
@@ -166,10 +166,10 @@ export default function Dashboard() {
                       onClose={handleClose}
                       className="menu-list"
                     >
-                      <MenuItem disableRipple onClick={handleClose}>
+                      <MenuItem onClick={handleClose}>
                         Action
                       </MenuItem>
-                      <MenuItem onClick={() => { navigate('/'); }} disableRipple>
+                      <MenuItem onClick={() => { navigate('/'); }} >
                         Logout
                       </MenuItem>
                     </StyledMenu>
@@ -206,10 +206,10 @@ export default function Dashboard() {
                       onClose={handleClose}
                       className="menu-list"
                     >
-                      <MenuItem disableRipple onClick={handleClose}>
+                      <MenuItem onClick={handleClose}>
                         Action
                       </MenuItem>
-                      <MenuItem onClick={() => { navigate('/'); }} disableRipple>
+                      <MenuItem onClick={() => { navigate('/'); }}>
                         Logout
                       </MenuItem>
                     </StyledMenu>
@@ -248,8 +248,11 @@ export default function Dashboard() {
                       onClose={handleClose}
                       className="menu-list"
                     >
-                      <MenuItem disableRipple onClick={handleClose}>
+                      <MenuItem  onClick={handleClose}>
                         Action
+                      </MenuItem>
+                      <MenuItem onClick={() => { navigate('/'); }} >
+                        Logout
                       </MenuItem>
                     </StyledMenu>
                   </Box>
